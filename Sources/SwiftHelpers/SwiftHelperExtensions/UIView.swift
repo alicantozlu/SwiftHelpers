@@ -27,12 +27,12 @@ extension UIView {
     //MARK: - UIView Shadow Functions
     
     ///Default: borderWidth: 0.0 | shadowColor: black | shadowOffset: width: 0, height: 0 | shadowRadius: 5.0 | shadowOpacity: 1
-    public func shadowMaker(borderWidth: Double?, shadowColor: CGColor?, shadowOffset: CGSize?, shadowRadius: Double?, shadowOpacity: Float?){
-        self.layer.borderWidth = borderWidth ?? 0.0
-        self.layer.shadowColor = shadowColor ?? UIColor.black.cgColor
-        self.layer.shadowOffset = shadowOffset ?? CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = shadowRadius ?? 5.0
-        self.layer.shadowOpacity = shadowOpacity ?? 1
+    public func shadowMaker(borderWidth: Double = 0.0, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = CGSize(width: 0, height: 0), shadowRadius: Double = 5.0, shadowOpacity: Float = 1){
+        self.layer.borderWidth = borderWidth
+        self.layer.shadowColor = shadowColor
+        self.layer.shadowOffset = shadowOffset
+        self.layer.shadowRadius = shadowRadius
+        self.layer.shadowOpacity = shadowOpacity
         self.layer.masksToBounds = false
     }
     
