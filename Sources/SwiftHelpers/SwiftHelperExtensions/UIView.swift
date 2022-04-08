@@ -16,7 +16,6 @@ extension UIView {
         self.layer.borderColor = borderColor
         self.layer.borderWidth = borderWidth
     }
-}
     
     //MARK: - UIView Shadow Functions
     
