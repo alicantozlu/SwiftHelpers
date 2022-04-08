@@ -17,19 +17,20 @@ extension UIView {
         self.layer.mask = mask
     }
     
-    //MARK: - Shadow Functions
+    //MARK: - UIView Shadow Functions
     
-    public func shadowMaker(shadowRadius: Double ?? 5.0, shadowOpacity: Double ?? 1.0){
-        self.layer.borderWidth = 0.0
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowRadius = shadowRadius
-        self.layer.shadowOpacity = shadowOpacity
+    ///Default: borderWidth: 0.0 | shadowColor: black | shadowOffset: width: 0, height: 0 | shadowRadius: 5.0 | shadowOpacity: 1
+    public func shadowMaker(borderWidth: Double?, shadowColor: CGColor?, shadowOffset: CGSize?, shadowRadius: Double?, shadowOpacity: Float?){
+        self.layer.borderWidth = borderWidth ?? 0.0
+        self.layer.shadowColor = shadowColor ?? UIColor.black.cgColor
+        self.layer.shadowOffset = shadowOffset ?? CGSize(width: 0, height: 0)
+        self.layer.shadowRadius = shadowRadius ?? 5.0
+        self.layer.shadowOpacity = shadowOpacity ?? 1
         self.layer.masksToBounds = false
     }
     
+    
     public func addShadow(to edges: [UIRectEdge], radius: CGFloat = 3.0, opacity: Float = 0.6, color: CGColor = UIColor.black.cgColor) {
-        
         let fromColor = color
         let toColor = UIColor.clear.cgColor
         let viewFrame = self.frame
