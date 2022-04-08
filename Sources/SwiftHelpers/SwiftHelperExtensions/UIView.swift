@@ -9,6 +9,7 @@ import UIKit
 
 /// Add cornerRadius to expected corners, configure borderRadius and color
 extension UIView {
+    @available(iOS 11.0, *)
     public func cornerConfigure(cornerRadius: Double, maskedCorners: CACornerMask , borderColor: CGColor, borderWidth: Double) {
         self.clipsToBounds = true
         self.layer.cornerRadius = cornerRadius
