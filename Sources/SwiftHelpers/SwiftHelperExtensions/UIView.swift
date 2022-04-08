@@ -13,9 +13,16 @@ extension UIView {
         let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         
-        self.mask.path = path.cgPath
+        mask.path = path.cgPath
         self.layer.mask = mask
+        
+        /*yourView.clipsToBounds = true
+        yourView.layer.cornerRadius = 10
+        yourView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]*/
     }
+    
+    
+    
     
     //MARK: - UIView Shadow Functions
     
