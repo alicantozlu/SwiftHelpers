@@ -9,7 +9,7 @@ import UIKit
 
 /// Add cornerRadius to expected corners, configure borderRadius and color
 extension UIView {
-    public func asdasd(cornerRadius: Double, maskedCorners: CACornerMask , borderColor: CGColor, borderWidth: Double) {
+    public func cornerConfigure(cornerRadius: Double, maskedCorners: CACornerMask , borderColor: CGColor, borderWidth: Double) {
         self.clipsToBounds = true
         self.layer.cornerRadius = cornerRadius
         self.layer.maskedCorners = maskedCorners
