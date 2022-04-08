@@ -7,27 +7,21 @@
 
 import UIKit
 
-/// Add cornerRadius to expected corner with desired value
+/// Add cornerRadius to expected corners, configure borderRadius and color
 extension UIView {
-    public func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        
-        mask.path = path.cgPath
-        self.layer.mask = mask
-        
-        /*yourView.clipsToBounds = true
-        yourView.layer.cornerRadius = 10
-        yourView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]*/
+    public func asdasd(cornerRadius: Double, maskedCorners: CACornerMask , borderColor: CGColor, borderWidth: Double) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = cornerRadius
+        self.layer.maskedCorners = maskedCorners
+        self.layer.borderColor = borderColor
+        self.layer.borderWidth = borderWidth
     }
-    
-    
-    
+}
     
     //MARK: - UIView Shadow Functions
     
     ///Default: borderWidth: 0.0 | shadowColor: black | shadowOffset: width: 0, height: 0 | shadowRadius: 5.0 | shadowOpacity: 1
-    public func shadowMaker(borderWidth: Double = 0.0, shadowColor: CGColor = UIColor.black.cgColor, shadowOffset: CGSize = CGSize(width: 0, height: 0), shadowRadius: Double = 5.0, shadowOpacity: Float = 1){
+    public func shadowMaker(borderWidth: Double, shadowColor: CGColor, shadowOffset: CGSize, shadowRadius: Double, shadowOpacity: Float){
         self.layer.borderWidth = borderWidth
         self.layer.shadowColor = shadowColor
         self.layer.shadowOffset = shadowOffset
